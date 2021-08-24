@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Router, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import {
     Login,
     Posts,
@@ -10,25 +10,31 @@ import {
 const App = () => {
     const [token, setToken] = useState('');
     const [user, setUser] = useState('');
-    return <>
+    console.log("user: ", user);
+    return <div>
         <h1>Stranger's Things</h1>
-        <Link to = '/posts'>Post |, </Link>
-        <Link to = '/account/login'>Login |, </Link>
-        <Link to='/newpost'>NewPost |</Link>
+        <Link to = '/posts'>Post</Link>|
+        <Link to = '/account/login'>Login</Link>|
+        <Link to='/newpost'>NewPost</Link>|
         
         <div>
-            <Route exact path='/'>
+            <Route exact path = '/'>
                 <Posts />
             </Route>
+
             <Route path = '/posts'>
                 <Posts token = {token} />
             </Route>
+
             <Route path = '/account/:method'>
                 <Login setToken = {setToken} setUser = {setUser} />
             </Route>
+
             <Route path='/newpost'>
                 <NewPost token = {token} />
             </Route>
         </div>
-    </>
+    </div>
 }
+
+export default App;

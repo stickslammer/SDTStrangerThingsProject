@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router';
-
+import { Link } from 'react-router-dom';
 const apiUrl = `https://strangers-things.herokuapp.com/api/2105-SJS-RM-WEB-PT/`;
 
 const Login = ({ setToken, setUser }) => {
@@ -12,7 +12,7 @@ const Login = ({ setToken, setUser }) => {
 
     console.log(params.method);
 
-    return <>
+    return <div>
         <h1>Login/Register</h1>
         <div>This is the {params.method} method</div>
 
@@ -61,7 +61,7 @@ const Login = ({ setToken, setUser }) => {
             }
 
         </form>
-    </>
+    </div>
 }
 
 export default Login;

@@ -8,5 +8,6 @@ ReactDOM.render(
     <Router>
         <App />
     </Router>,
-    document.querySelector('app')
+    document.querySelector('#app')
 )
+

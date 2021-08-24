@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 
-const apiUrl = process.env;
+const { REACT_APP_BASE_URL} = process.env;
 
 const NewPost = ({ token }) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [location, setLocation] = useState('')
     const [willDeliver, setWillDeliver] = useState(false)
-    return <>
+    const [price, setPrice] = useState('')
+    return <div>
         <h1>Create a Post</h1>
     
         <form onSubmit={async (event) => {
             event.preventDefault();
 
-            fetch(`${apiUrl}/posts`, {
+            fetch(`${REACT_APP_BASE_URL}/posts`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -64,7 +65,7 @@ const NewPost = ({ token }) => {
 
             <button type="submit">Post</button>
         </form>
-    </>
+    </div>
 }
 
 export default NewPost;
