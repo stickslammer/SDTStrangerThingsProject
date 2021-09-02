@@ -1,35 +1,11 @@
 import React from 'react';
 
-const Home = ({ username }) => {
-
+const Home = ({ user, token, messages, userId }) => {
     return <div>
-        <h1>Welcome to Adventure Away</h1>
-        {
-            username ? <div>
-                You are logged in as {username}
-            </div> : ''
-        }
+        <h1 className="welcome">Welcome to Stranger's Things</h1>
+        {token ? <div className="welcomeuser">
+            You are logged in as {user}
+        </div> : ''}
     </div>
 }
-
-
 export default Home;
-
-// import React from 'react';
-
-
-// const Home = ({ username }) => {
-
-//     return <div>
-//         <h1>Welcome to Stranger's Things!</h1>
-//         {
-    
-//             username ? <div>
-//                 You are logged in as {username}
-//             </div> : ''
-//         }
-//     </div>
-// }
-
-
-// export default Home;

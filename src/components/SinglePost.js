@@ -1,14 +1,18 @@
 import React from 'react';
 
-const VacationSingle = ({ vacation, children }) => {
-    return vacation
-        ? <div style={{ margin: '.2rem' }}>
+const SinglePost = ({ post, children }) => {
+    return post
+        ? <div
+            style={{ margin: '1.2rem' }}
+        >
             <h5>
-                Location: {vacation.location}
+                {post.title}
             </h5>
-            <div>
-                Description: {vacation.description}
-            </div>
+            <div>Description: {post.description}</div>
+            <div>Price: {post.price}</div>
+            <div>Seller: {post.author.username}</div>
+            <div>Location: {post.location}</div>
+            <div>Will Deliver: {post.willDeliver ? 'yes' : 'no'}</div>
             {
                 children
             }
@@ -16,38 +20,4 @@ const VacationSingle = ({ vacation, children }) => {
         : 'Loading...'
 }
 
-export default VacationSingle;
-
-//
-
-// const SinglePost = ({ post, children }) => {
-//     return post
-//         ? <div style={{ margin: '.2rem' }}>
-//             <h5>
-//                 {post.title}
-//             </h5>
-//             <div>
-//                 Description: {post.description}
-//             </div>
-//             <div>
-//                 Price {post.price}
-//             </div>
-//             <div>
-//                 Seller: {post.author.username}
-//             </div>
-
-//             <div>
-//                 Location: {post.location}
-//             </div>
-//             <div>
-//                 Will Deliver: {post.willDeliver ? "yes": "no"}
-//             </div>
-
-//             {
-//                 children
-//             }
-//         </div>
-//         : 'Loading...'
-// }
-
-// export default SinglePost;
+export default SinglePost;
